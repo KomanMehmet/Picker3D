@@ -130,7 +130,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 1
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -184,7 +184,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3628297582793116121}
-  - component: {fileID: 6328491302390694634}
+  - component: {fileID: 7481862257342099113}
   m_Layer: 5
   m_Name: UIPanelController
   m_TagString: Untagged
@@ -206,12 +206,12 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1127495602932151175}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1080, y: 1920}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &6328491302390694634
+--- !u!114 &7481862257342099113
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -220,9 +220,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 4823502512226128748}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6e9bcff2086414cac0e4b067ae9e35c, type: 3}
+  m_Script: {fileID: 11500000, guid: 586a732c5a9c4b96870266ddfc5464d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Layers:
+  - {fileID: 5292639043453706602}
+  - {fileID: 408918002739578287}
+  - {fileID: 6027052033921558338}
 --- !u!1 &6145101717442470896
 GameObject:
   m_ObjectHideFlags: 0
