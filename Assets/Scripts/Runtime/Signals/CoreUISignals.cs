@@ -2,26 +2,28 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Signals
+namespace Runtime.Signals
 {
     public class CoreUISignals : MonoBehaviour
     {
-        public static CoreUISignals Instance;
-        
+        public static CoreUISignals Instance { get; private set; }
 
+        public UnityAction<UIPanelTypes, int> onOpenPanel = delegate {  };
+        public UnityAction<int> onClosePanel = delegate {  };
+        public UnityAction onCloseAllPanel = delegate {  };
+        
         private void Awake()
         {
             if (Instance != null && Instance != this)
             {
-                Destroy(gameObject);
+                Destroy(this);
                 return;
             }
 
             Instance = this;
+            DontDestroyOnLoad(this);
         }
         
-        public UnityAction<UIPanelTypes, int> onOpenPanel = delegate {  };
-        public UnityAction<int> onClosePanel = delegate {  };
-        public UnityAction onCloseAllPanel = delegate {  };
+        
     }
 }

@@ -1,14 +1,12 @@
-﻿using System;
-using Runtime.Enums;
+﻿using Runtime.Enums;
 using Runtime.Signals;
-using Signals;
 using UnityEngine;
 
 namespace Runtime.Managers
 {
     public class UIManager : MonoBehaviour
     {
-        private void OnEnable()
+        private void Start()
         {
             SubscribeEvents();
         }

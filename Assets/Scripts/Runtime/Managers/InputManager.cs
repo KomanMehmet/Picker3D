@@ -3,7 +3,6 @@ using Runtime.Data.UnityObjects;
 using Runtime.Data.ValueObjects;
 using Runtime.Keys;
 using Runtime.Signals;
-using Signals;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -32,7 +31,7 @@ namespace Runtime.Managers
             return Resources.Load<CD_Input>("Data/CD_Input").Data;
         }
 
-        private void OnEnable()
+        private void Start()
         {
             SubscribeEvents();
         }

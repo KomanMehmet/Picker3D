@@ -1,5 +1,4 @@
-﻿using System;
-using Runtime.Signals;
+﻿using Runtime.Signals;
 using Unity.Cinemachine;
 using Unity.Mathematics;
 using UnityEngine;

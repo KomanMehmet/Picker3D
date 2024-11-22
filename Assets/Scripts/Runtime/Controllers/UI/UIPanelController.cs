@@ -1,21 +1,20 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Runtime.Enums;
-using Signals;
+using Runtime.Signals;
 using UnityEngine;
 
 namespace Runtime.Controllers.UI
 {
     public class UIPanelController : MonoBehaviour
     {
-        
-        
         [SerializeField] private List<Transform> Layers = new List<Transform>();
 
-        private void OnEnable()
+        private void Start()
         {
             SubscribeEvents();
         }
-        
+
         private void SubscribeEvents()
         {
             CoreUISignals.Instance.onOpenPanel += OnOpenPanel;
@@ -25,13 +24,14 @@ namespace Runtime.Controllers.UI
 
         private void OnOpenPanel(UIPanelTypes panelType, int value)
         {
+            
             OnClosePanel(value);
             Instantiate(Resources.Load<GameObject>($"Screens/{panelType}Panel"),Layers[value]);
         }
         
         private void OnClosePanel(int value)
         {
-            if (Layers[value].childCount > 0) return;
+            if (Layers[value].childCount <= 0) return;
             
 #if UNITY_EDITOR
                 DestroyImmediate(Layers[value].GetChild(0).gameObject);
@@ -55,8 +55,8 @@ namespace Runtime.Controllers.UI
         
         private void UnSubscribeEvents()
         {
-            CoreUISignals.Instance.onClosePanel -= OnClosePanel;
             CoreUISignals.Instance.onOpenPanel -= OnOpenPanel;
+            CoreUISignals.Instance.onClosePanel -= OnClosePanel;
             CoreUISignals.Instance.onCloseAllPanel -= OnOpenAllPanel;
         }
 
