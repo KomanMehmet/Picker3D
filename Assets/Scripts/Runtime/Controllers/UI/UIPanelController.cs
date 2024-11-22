@@ -10,7 +10,7 @@ namespace Runtime.Controllers.UI
     {
         [SerializeField] private List<Transform> Layers = new List<Transform>();
 
-        private void Start()
+        private void OnEnable()
         {
             SubscribeEvents();
         }

@@ -6,7 +6,7 @@ namespace Runtime.Managers
 {
     public class UIManager : MonoBehaviour
     {
-        private void Start()
+        private void OnEnable()
         {
             SubscribeEvents();
         }
@@ -51,7 +51,7 @@ namespace Runtime.Managers
             UISignals.Instance.onPlay?.Invoke();
             CoreUISignals.Instance.onClosePanel?.Invoke(1);
             InputSignals.Instance.onEnableInput?.Invoke();
-            //CameraSignals
+            CameraSignals.Instance.onSetCameraTarget?.Invoke();
         }
 
         private void UnSubscribeEvents()
